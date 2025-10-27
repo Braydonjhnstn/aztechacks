@@ -13,7 +13,7 @@ export default function Header() {
         <div className="flex justify-between h-16">
           <div className="flex">
             <Link href="/" className="flex items-center">
-              <span className="text-xl font-bold">WCO</span>
+              <span className="text-xl font-bold">AZTECHACKS</span>
             </Link>
           </div>
           <div className="flex items-center space-x-4">
