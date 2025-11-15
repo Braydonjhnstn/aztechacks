@@ -288,8 +288,8 @@ export default function Home() {
           <div className="w-full h-full flex items-center justify-center">
             <div className="text-center text-gray-900">
               <h2 className="text-6xl font-black mb-8">PARTNERS</h2>
-              <p className="text-xl text-gray-500">WANT YOUR LOGO HERE? </p>
-              <p className="text-xl text-gray-500">EMAIL INFO@AZTECHACKS.COM FOR SPONSORSHIP INQUIRIES</p>
+              <p className="text-.95xl text-black-500">WANT YOUR LOGO HERE? </p>
+              <p className="text-.95xl text-black-500">EMAIL INFO@AZTECHACKS.COM FOR SPONSORSHIP INQUIRIES</p>
             </div>
           </div>
         </ParallaxLayer>
