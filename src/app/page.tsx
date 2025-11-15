@@ -2,17 +2,16 @@
 
 import React, { useEffect, useState, useRef } from "react";
 import { motion } from "framer-motion";
-import { Parallax, ParallaxLayer } from "@react-spring/parallax";
+import { Parallax, ParallaxLayer, type IParallax } from "@react-spring/parallax";
 import { useSpring, animated, useScroll } from "@react-spring/web";
 import Link from "next/link";
-import Header from '@/components/Header'
 
 const clamp = (v: number, min = 0, max = 1) => Math.min(max, Math.max(min, v));
 const lerp = (a: number, b: number, t: number) => a + (b - a) * t;
 
 export default function Home() {
   const [mounted, setMounted] = useState(false);
-  const parallaxRef = useRef(null);
+  const parallaxRef = useRef<IParallax>(null);
 
   // One spring we'll drive from scroll progress
   const [logo, api] = useSpring(() => ({
@@ -38,7 +37,7 @@ export default function Home() {
   // Track scroll of the Parallax internal container
   useScroll({
     // Parallax exposes the scrollable element as `container`
-    container: (() => (parallaxRef.current as any)?.container) as any,
+    container: parallaxRef.current?.container,
     onChange: ({ value: { scrollYProgress } }) => {
       // Animate much earlier - start at 20% scroll (for partner logos)
       const t = clamp((scrollYProgress - 0.1) / 0.7); // much wider window
@@ -180,8 +179,7 @@ export default function Home() {
           >
             <button 
               onClick={() => {
-                const parallax = parallaxRef.current as any;
-                if (parallax) parallax.scrollTo(1);
+                if (parallaxRef.current) parallaxRef.current.scrollTo(1);
               }}
               className="hover:text-gray-900 transition-colors cursor-pointer"
             >
@@ -190,8 +188,7 @@ export default function Home() {
             <span className="text-gray-400">,</span>
             <button 
               onClick={() => {
-                const parallax = parallaxRef.current as any;
-                if (parallax) parallax.scrollTo(2);
+                if (parallaxRef.current) parallaxRef.current.scrollTo(2);
               }}
               className="hover:text-gray-900 transition-colors cursor-pointer"
             >
@@ -200,8 +197,7 @@ export default function Home() {
             <span className="text-gray-400">,</span>
             <button 
               onClick={() => {
-                const parallax = parallaxRef.current as any;
-                if (parallax) parallax.scrollTo(3);
+                if (parallaxRef.current) parallaxRef.current.scrollTo(3);
               }}
               className="hover:text-gray-900 transition-colors cursor-pointer"
             >
