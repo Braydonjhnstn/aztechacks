@@ -37,7 +37,7 @@ export default function Home() {
   // Track scroll of the Parallax internal container
   useScroll({
     // Parallax exposes the scrollable element as `container`
-    container: parallaxRef.current?.container,
+    container: parallaxRef.current?.container as React.MutableRefObject<HTMLElement> | undefined,
     onChange: ({ value: { scrollYProgress } }) => {
       // Animate much earlier - start at 20% scroll (for partner logos)
       const t = clamp((scrollYProgress - 0.1) / 0.7); // much wider window
