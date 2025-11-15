@@ -16,7 +16,9 @@ export const metadata: Metadata = {
   title: "AZTECHACKS",
   description: "AZTECHACKS by WORLD COMPUTING ORGANIZATION",
   icons: {
-    icon: "/AZTECHACKS.png",
+    icon: [
+      { url: "/AZTECHACKS.png", type: "image/png" },
+    ],
     shortcut: "/AZTECHACKS.png",
     apple: "/AZTECHACKS.png",
   },
