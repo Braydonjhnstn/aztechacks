@@ -178,17 +178,35 @@ export default function Home() {
               delay: 0.8,
             }}
           >
-            <Link href="/board" className="hover:text-gray-900 transition-colors">
-              BOARD
-            </Link>
+            <button 
+              onClick={() => {
+                const parallax = parallaxRef.current as any;
+                if (parallax) parallax.scrollTo(1);
+              }}
+              className="hover:text-gray-900 transition-colors cursor-pointer"
+            >
+              PARTNERS
+            </button>
             <span className="text-gray-400">,</span>
-            <Link href="/members" className="hover:text-gray-900 transition-colors">
-              MEMBERS
-            </Link>
+            <button 
+              onClick={() => {
+                const parallax = parallaxRef.current as any;
+                if (parallax) parallax.scrollTo(2);
+              }}
+              className="hover:text-gray-900 transition-colors cursor-pointer"
+            >
+              ABOUT
+            </button>
             <span className="text-gray-400">,</span>
-            <Link href="/projects" className="hover:text-gray-900 transition-colors">
-              PROJECTS
-            </Link>
+            <button 
+              onClick={() => {
+                const parallax = parallaxRef.current as any;
+                if (parallax) parallax.scrollTo(3);
+              }}
+              className="hover:text-gray-900 transition-colors cursor-pointer"
+            >
+              SCHEDULE
+            </button>
           </motion.div>
         )}
       </nav>

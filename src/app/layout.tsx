@@ -15,6 +15,11 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "AZTECHACKS",
   description: "AZTECHACKS by WORLD COMPUTING ORGANIZATION",
+  icons: {
+    icon: "/AZTECHACKS.png",
+    shortcut: "/AZTECHACKS.png",
+    apple: "/AZTECHACKS.png",
+  },
 };
 
 export default function RootLayout({
